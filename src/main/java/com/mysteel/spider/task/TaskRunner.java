@@ -42,6 +42,7 @@ public class TaskRunner implements Callable<List<ResultMap>> {
 			} while (isPaging());
 			//转换
 			resultMaps = format(config.getDownloadConfig(), resultMaps);
+			pipLine(resultMaps);
 			return resultMaps;
 		} catch (Exception e) {
 			log.error("一点小问题:" + e.getMessage(), e);

@@ -35,9 +35,9 @@ public class DemoApplicationTests {
       @Override
       public void run() {
         //模板任务，解决特殊网站的爬取
-        sendSeleniumTemplateTask();
+//        sendSeleniumTemplateTask();
         //用户自定义流程任务， 待完善
-        //sendSeleniumStepTask();
+        sendSeleniumStepTask();
       }
     });
     task.start();
@@ -132,7 +132,7 @@ public class DemoApplicationTests {
   public void sendSeleniumStepTask(){
     // 列表配置
     TaskConfig taskConfig = new TaskConfig();
-    taskConfig.setTaskType(TaskTypeEnum.LIST.CODE);
+    taskConfig.setHandleType(HandleTypeEnum.REDIRECT.CODE);
     StepConfig stepConfig = StepConfig.builder()
       .name("url")
       .resultType("href")
@@ -146,7 +146,6 @@ public class DemoApplicationTests {
     // 内容配置
     TaskConfig childTaskConfig = new TaskConfig();
     childTaskConfig.setUrl("http://blog.sina.com.cn/s/blog_56c35a550102yw8c.html");
-    childTaskConfig.setTaskType(TaskTypeEnum.CONTENT.CODE);
     StepConfig titleConfig = StepConfig.builder()
       .name("title")
       .resultType("text")
@@ -160,6 +159,9 @@ public class DemoApplicationTests {
       .expression("//*[@id=\"sina_keyword_ad_area2\"]")
       .build();
     childTaskConfig.setExtractConfig(CollUtil.newArrayList(titleConfig,contentConfig));
+    childTaskConfig.setHandleType(HandleTypeEnum.PERSIST.CODE);
+    childTaskConfig.setTaskType(SELENIUM_TEST);
+    taskConfig.setChildTaskConfig(childTaskConfig);
 
     //配置
     taskConfig.setUuid(UUID.randomUUID().toString());
