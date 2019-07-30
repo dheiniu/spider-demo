@@ -121,9 +121,9 @@
     </logger>
 
     <!-- root logger 配置 -->
-    <Root level="ALL" includeLocation="true">
-      <AppenderRef ref="Console"/>
-    </Root>
+    <!--<Root level="ALL" includeLocation="true">-->
+      <!--<AppenderRef ref="Console"/>-->
+    <!--</Root>-->
 
     <!-- AsyncRoot - 异步记录日志 - 需要LMAXDisruptor的支持 -->
     <!--
