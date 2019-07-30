@@ -16,4 +16,5 @@ public class TaskConfig extends BaseConfig {
 	private PagingConfig pagingConfig;
 	private List<StepConfig> formatConfig;
 
+	private String handleType;
 }
