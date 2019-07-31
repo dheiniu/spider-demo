@@ -60,7 +60,7 @@ public class SParser implements Parser {
     }
     try (PooledWebDriver driver = browserDriver.get()) {
       //使用代理
-      if(Boolean.TRUE.equals(baseConfig.getIsProxy())){
+      if(Boolean.TRUE.equals(config.getBrowserProxyOpen()) && Boolean.TRUE.equals(baseConfig.getIsProxy())){
         BrowerProxy browerProxy = BrowerProxy.builder()
           .browerId(driver.getId())
           .taskUuid(baseConfig.getUuid())
