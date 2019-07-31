@@ -28,7 +28,7 @@ public class HParser implements Parser {
   public List<ResultMap> execute(BaseConfig baseConfig) {
     logger.info("【Html执行器】:{}", baseConfig);
     ResultMap  result = new ResultMap();
-    result.put("name","黄志杰");
+    result.put("name","这是一个静态页面解析器");
     List<ResultMap> list = new ArrayList();
     list.add(result);
     return list;
