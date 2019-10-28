@@ -2,6 +2,9 @@ package com.mysteel.spider.util;
 
 import java.util.Arrays;
 
+/**
+ * 表达式枚举
+ */
 public enum ExpressionTypeEnum {
 	CSS("1", "CSS"), XPATH("2", "XPath");
 
