@@ -1,6 +1,5 @@
 package com.mysteel.spider.consumer.selenium.template.library;
 
-import com.mysteel.spider.constant.STemplateEnum;
 import com.mysteel.spider.consumer.selenium.pool.PooledWebDriver;
 import com.mysteel.spider.consumer.selenium.template.TemplateStrategy;
 import com.mysteel.spider.entity.Article;
@@ -26,7 +25,7 @@ public class WeiXinTemplate implements TemplateStrategy {
   /**
    * 请求地址
    */
-  private static final String DOMAIN = "https://mp.weixin.qq.com/s/cKlTa4XBeX6gvaW1iQXVyw";
+  private static final String DOMAIN = "https://mp.weixin.qq.com/s/i1DH-5YFE_RM1-eAzjjQmw";
 
   /**
    * 作者xpath
@@ -45,7 +44,7 @@ public class WeiXinTemplate implements TemplateStrategy {
 
   @Override
   public List<ResultMap> get(TemplateConfig templateConfig, PooledWebDriver webDriver) {
-    if(STemplateEnum.WEI_XIN.getDomain().equals(DOMAIN)){
+    if(true){
       webDriver.get(DOMAIN);
       List<ResultMap> list = new ArrayList<>();
       list.add(ResultMapUtil.entityToMap(Article.builder()

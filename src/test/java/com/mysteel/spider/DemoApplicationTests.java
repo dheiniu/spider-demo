@@ -34,10 +34,39 @@ public class DemoApplicationTests {
     Thread task = new Thread(new Runnable() {
       @Override
       public void run() {
-        //模板任务，解决特殊网站的爬取
-//        sendSeleniumTemplateTask();
-        //用户自定义流程任务， 待完善
-        sendSeleniumStepTask();
+//        TemplateConfig juejing  = new TemplateConfig();
+//        juejing.setUuid(UUID.randomUUID().toString());
+//        juejing.setTaskType(TaskWayEnum.SELENIUM.getType());
+//        juejing.setSType(STaskType.TEMPLATE.getType());
+//        juejing.setTName(STemplateEnum.JUE_JIN.getName());
+//        juejing.setDomain(STemplateEnum.JUE_JIN.getDomain());
+//        juejing.setContainSubTask(true);
+//        juejing.setPriority(2);
+//        juejing.setIsProxy(true);
+//        rabbitMqMessageSend.sendMessage(juejing,SELENIUM_TEST,juejing.getPriority());
+        //
+//        TemplateConfig weBo  = new TemplateConfig();
+//        weBo.setUuid(UUID.randomUUID().toString());
+//        weBo.setTaskType(TaskWayEnum.SELENIUM.getType());
+//        weBo.setSType(STaskType.TEMPLATE.getType());
+//        weBo.setTName(STemplateEnum.WEI_BO.getName());
+//        weBo.setDomain(STemplateEnum.WEI_BO.getDomain());
+//        weBo.setContainSubTask(false);
+//        weBo.setPriority(1);
+//        rabbitMqMessageSend.sendMessage(weBo,SELENIUM_TEST,weBo.getPriority());
+
+        TemplateConfig weixin = new TemplateConfig();
+        weixin.setUuid(UUID.randomUUID().toString());
+        weixin.setTaskType(TaskWayEnum.SELENIUM.getType());
+        weixin.setSType(STaskType.TEMPLATE.getType());
+        weixin.setTName(STemplateEnum.WEI_XIN.getName());
+        weixin.setDomain(STemplateEnum.WEI_XIN.getDomain());
+        weixin.setContainSubTask(false);
+        weixin.setPriority(2);
+        weixin.setIsProxy(true);
+        for(int i=0;i<1;i++){
+          rabbitMqMessageSend.sendMessage(weixin,SELENIUM_TEST,weixin.getPriority());
+        }
       }
     });
     task.start();

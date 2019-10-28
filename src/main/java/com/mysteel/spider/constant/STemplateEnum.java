@@ -37,7 +37,12 @@ public enum  STemplateEnum {
   /**
    * 搜狗微信
    */
-  SOU_GOU_WEI_XIN("搜狗微信",5,"souGouWeiXinTemplate","#");
+  SOU_GOU_WEI_XIN("搜狗微信",5,"souGouWeiXinTemplate","#"),
+
+  /**
+   * 微博
+   */
+  WEI_BO("微博",6,"weiBoTemplate","#");
 
 
 

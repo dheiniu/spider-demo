@@ -1,6 +1,7 @@
 package com.mysteel.spider.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
  * @date: 2019/7/29 11:04
  */
 @Data
+@ToString
 public class BaseConfig {
 
   public BaseConfig(){}

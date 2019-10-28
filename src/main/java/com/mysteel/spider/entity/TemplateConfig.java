@@ -1,6 +1,7 @@
 package com.mysteel.spider.entity;
 
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * @description:爬虫模板配置
@@ -10,6 +11,7 @@ import lombok.Data;
  * @date: 2019/7/29 11:04
  */
 @Data
+@ToString
 public class TemplateConfig extends BaseConfig{
 
   public TemplateConfig(){
